@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FluxifyJME - The Market Liquidity Providing Platform | AI-Driven DeFi &amp; Alternative Investment</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Pretendard & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-obsidian">
+
+  <!-- ==========================================================================
+       TOP NAVIGATION BAR (Finsight Labs & Toss Invest Sleek Dark Header)
+       ========================================================================== -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <!-- Brand Area with Official Metallic FJ Emblem -->
+      <div class="brand-area" onclick="switchTab('tab-dashboard')">
+        <img src="assets/logo_fj_circle.png" alt="FluxifyJME Emblem" class="brand-emblem-img">
+        <div class="brand-titles">
+          <div class="brand-name-row">
+            <span class="brand-logo-text">Fluxify<span class="brand-accent">JME</span></span>
+            <span class="brand-corp-tag">FluxifyJME Inc.</span>
+          </div>
+          <div class="brand-subbadge">
+            <span class="pulse-indicator"></span>
+            <span>The Market Liquidity Providing Platform</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Founder & Consultant Profile Badge -->
+      <div class="founder-badge" onclick="switchTab('tab-founder')">
+        <img src="assets/logo_j.png" alt="Jamie Song Emblem" class="founder-nav-avatar">
+        <div class="founder-details">
+          <div class="founder-name-row">
+            <strong>Jamie (JaeMin) Song · Chief Portfolio Manager</strong>
+            <span class="pill-role">Cross-border PE/VC · Global Macro</span>
+          </div>
+          <div class="founder-sub-certs">
+            Alternative Investments · PE/HF · Digital Asset · RWA ⊃ STO
+          </div>
+        </div>
+      </div>
+
+      <!-- Header Controls: Token Pill, Gemini Connection Badge, AI Advisory & Settings -->
+      <div class="header-actions">
+        <div class="token-ticker-pill">
+          <span class="ticker-label">Token:</span>
+          <strong class="ticker-name">FluxFi</strong>
+          <span class="ticker-price text-emerald">US$ 1.01 (+4.8%)</span>
+        </div>
+        <div id="apiKeyStatusBadge" class="api-status-badge status-connected" onclick="openApiModal()">
+          <span class="status-indicator"></span>
+          <span class="status-label">API Connected</span>
+        </div>
+        <button class="btn btn-primary-toss" onclick="openAiChatModal()">
+          <span class="icon">🤖</span>
+          <span>AI Advisory</span>
+        </button>
+        <button class="btn btn-outline-dark" onclick="openApiModal()">
+          <span class="icon">⚙️</span>
+          <span>API Settings</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs (5 Core Clean Tabs) -->
+    <nav class="tab-navigation">
+      <div class="tab-scroll-container">
+        <button class="tab-btn active" data-tab="tab-dashboard" onclick="switchTab('tab-dashboard')">
+          <span class="tab-icon">📊</span>
+          <span>Portfolio</span>
+          <span class="tab-subdesc">Cockpit &amp; Architecture</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-consulting" onclick="switchTab('tab-consulting')">
+          <span class="tab-icon">🏢</span>
+          <span>Advisory Track Record</span>
+          <span class="badge-consulting">Hana Capital Mandate</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-analytics" onclick="switchTab('tab-analytics')">
+          <span class="tab-icon">🔬</span>
+          <span>Analytics Lab</span>
+          <span class="badge-analytics">5 Quant &amp; ZK-ML Engines</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-partnership" onclick="switchTab('tab-partnership')">
+          <span class="tab-icon">📱</span>
+          <span>Partnership Preview</span>
+          <span class="badge-toss">App-in-Toss &amp; M&amp;A</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-founder" onclick="switchTab('tab-founder')">
+          <span class="tab-icon">👤</span>
+          <span>Founder Profile</span>
+          <span class="badge-profile">Jamie Song · Track Record</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================== -->
+  <main class="main-content">
+
+    <!-- ======================================================================
+         TAB 1: PORTFOLIO (Dashboard, 5-Layer Architecture, Core-Satellite)
+         ====================================================================== -->
+    <section id="tab-dashboard" class="tab-panel active">
+      <div class="panel-header">
+        <div>
+          <h2>Portfolio Overview</h2>
+          <p class="panel-desc">Monitor Alternative Asset NAV, projected cash flows, and execution milestones on a unified cockpit.</p>
+        </div>
+        <div class="header-buttons">
+          <button class="btn btn-outline-cyan" onclick="switchTab('tab-partnership')">
+            <span>📱 Partnership Preview</span>
+          </button>
+          <button class="btn btn-primary-toss" onclick="openAiChatModal()">
+            <span>✨ Ask AI Desk</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero Banner: FLUXIFY PRIVATE MARKETS DEMO -->
+      <div class="hero-banner-card mb-24">
+        <div class="hero-banner-inner">
+          <div class="hero-badge-tag">FLUXIFY PRIVATE MARKETS · DEMO</div>
+          <h1 class="hero-headline">Institutional Alternative Investments, Unified</h1>
+          <p class="hero-subtext">Comprehensive visibility across Net Asset Value, projected liquidity distributions, and smart contract execution stages.</p>
+          <div class="hero-action-row">
+            <button class="btn btn-toss-large" onclick="openKycModal()">
+              <span>Get Started Easily</span>
+              <span class="arrow-icon">→</span>
+            </button>
+            <span class="hero-disclaimer-note">All asset balances, cash flows, and operational states shown are synthetic simulation examples (FX: US$ 1 = KRW 1,400).</span>
+          </div>
+        </div>
+        <div class="hero-standalone-pill">
+          <span>⚡ Zero installation, zero server, zero build tools — 100% standalone offline browser execution.</span>
+        </div>
+      </div>
+
+      <!-- Two Main Cards: Net Asset Value & Scheduled Cash Flows -->
+      <div class="dashboard-grid mb-24">
+        <!-- Left Main Card: Net Asset Value with Line Canvas -->
+        <div class="card col-span-7">
+          <div class="card-title-row">
+            <div>
+              <div class="card-supertitle">My Net Asset Value (NAV) <span class="badge-demo">DEMO</span></div>
+              <span class="subtext-muted">Simulated Sandbox Baseline · Not Client / FluxifyJME Proprietary AUM · As of Nov 2026</span>
+            </div>
+            <div class="time-filter-group">
+              <button class="time-btn active" onclick="changeNavHistoryRange('1M')">1M</button>
+              <button class="time-btn" onclick="changeNavHistoryRange('3M')">3M</button>
+              <button class="time-btn" onclick="changeNavHistoryRange('6M')">6M</button>
+              <button class="time-btn" onclick="changeNavHistoryRange('1Y')">1Y</button>
+            </div>
+          </div>
+
+          <div class="big-metric-display">
+            <div class="big-metric-num" id="kpiAUM">US$ 557.6M</div>
+            <div class="big-metric-delta text-emerald">
+              <span class="delta-arrow">▲</span>
+              <span class="delta-val">+ US$ 8.76M</span>
+              <span class="delta-rate">1-Month Simulated Gain +1.57%</span>
+            </div>
+          </div>
+
+          <div class="chart-wrapper line-chart-wrapper">
+            <canvas id="navHistoryCanvas" width="700" height="220"></canvas>
+          </div>
+        </div>
+
+        <!-- Right Main Card: Projected Cash Flows -->
+        <div class="card col-span-5">
+          <div class="card-title-row">
+            <div>
+              <div class="card-supertitle">Projected Cash Flows <span class="icon-inline">📅</span></div>
+              <span class="subtext-muted">Next 90 Days · Simulated Liquidity Calendar</span>
+            </div>
+            <span class="badge-status-green">Normal</span>
+          </div>
+
+          <div class="big-metric-display">
+            <div class="big-metric-num text-cyan" id="kpiCashFlow">US$ 4.57M</div>
+            <div class="cashflow-sublabel">Scheduled Principal &amp; Dividend Distributions</div>
+          </div>
+
+          <div class="cashflow-schedule-list">
+            <div class="schedule-item">
+              <div class="schedule-date-badge">11.18</div>
+              <div class="schedule-info">
+                <strong>Infrastructure Senior Debt Fund</strong>
+                <span class="schedule-type">Quarterly Coupon Settlement (Senior Debt)</span>
+              </div>
+              <div class="schedule-amount">US$ 1.71M</div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-date-badge">12.05</div>
+              <div class="schedule-info">
+                <strong>Logistics Center Hub A</strong>
+                <span class="schedule-type">Lease Rental Dividend (Core Real Estate)</span>
+              </div>
+              <div class="schedule-amount">US$ 1.30M</div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-date-badge">01.12</div>
+              <div class="schedule-info">
+                <strong>Growth Tech Equity Secondary</strong>
+                <span class="schedule-type">Share Sale Capital Distribution (Secondary Exit)</span>
+              </div>
+              <div class="schedule-amount">US$ 1.56M</div>
+            </div>
+          </div>
+
+          <div class="card-action-footer">
+            <button class="btn btn-ghost-link" onclick="switchTab('tab-analytics')">
+              <span>View Liquidity &amp; Waterfall Mechanics</span>
+              <span class="arrow-small">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Middle Stepper Card: Asset Execution Milestones -->
+      <div class="card mb-24">
+        <div class="card-title-row">
+          <div>
+            <h3>Asset Execution Milestones</h3>
+            <span class="subtext">Transparent lifecycle tracking without obscure hash strings</span>
+          </div>
+          <span class="badge-pill-light">Simulated Workflow Preview</span>
+        </div>
+
+        <div class="stepper-track-grid">
+          <div class="stepper-step completed">
+            <div class="step-icon-circle">✓</div>
+            <div class="step-main">
+              <div class="step-title-line">
+                <strong>1. Smart Contract Verified</strong>
+                <span class="step-date">Oct 29</span>
+              </div>
+              <p class="step-desc">Workflow validation demo: illustrates formal rules verification prior to capital deployment.</p>
+            </div>
+          </div>
+          <div class="stepper-step in-progress">
+            <div class="step-icon-circle">●</div>
+            <div class="step-main">
+              <div class="step-title-line">
+                <strong>2. Asset Allocation Active</strong>
+                <span class="step-date">Oct 31</span>
+              </div>
+              <p class="step-desc">Capital routing into Core-Satellite and tranche pools following governance sign-off.</p>
+            </div>
+          </div>
+          <div class="stepper-step pending">
+            <div class="step-icon-circle">○</div>
+            <div class="step-main">
+              <div class="step-title-line">
+                <strong>3. Settlement Awaiting</strong>
+                <span class="step-date">Nov 01</span>
+              </div>
+              <p class="step-desc">Awaiting institutional custodian confirmation and periodic waterfall distribution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Key Performance Indicators (TradFi & SaaS Standards) -->
+      <div class="summary-stats-grid mb-24">
+        <div class="stat-box">
+          <span class="stat-label">Portfolio NAV (Demo)</span>
+          <strong class="stat-num text-primary-light">US$ 557.6M</strong>
+          <span class="stat-sub">Synthetic baseline · Not proprietary AUM</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Model Expected Return</span>
+          <strong class="stat-num text-emerald" id="kpiReturn">9.11%</strong>
+          <span class="stat-sub">Computed based on user-defined inputs (CAGR)</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Portfolio Volatility &amp; VaR (95%)</span>
+          <strong class="stat-num text-cyan" id="kpiVolatility">11.80%</strong>
+          <span class="stat-sub">Downside risk estimate · Model assumption</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Sharpe Ratio</span>
+          <strong class="stat-num text-purple" id="kpiSharpe">0.48</strong>
+          <span class="stat-sub">Benchmark against 3.5% Risk-free Rate</span>
+        </div>
+      </div>
+
+      <!-- 5-Layer DeFi Infrastructure Architecture Card -->
+      <div class="card mb-24">
+        <div class="card-title-row">
+          <div>
+            <h3>FluxifyJME 5-Layer Decentralized Infrastructure Architecture</h3>
+            <span class="subtext">Connecting asset rights, cash flows, and governance via verifiable smart contracts</span>
+          </div>
+          <span class="badge-pill-cyan">FluxFi Protocol</span>
+        </div>
+
+        <div class="architecture-grid">
+          <div class="arch-layer-card">
+            <div class="layer-badge">Layer 1</div>
+            <h4>Settlement Layer</h4>
+            <p>Immutable state transition logging, dispute resolution, and base blockchain anchoring (L2 Mainnet Rollups).</p>
+          </div>
+          <div class="arch-layer-card">
+            <div class="layer-badge">Layer 2</div>
+            <h4>Asset Layer</h4>
+            <p>Compliant tokenized fund interests, private secondary shares, and RWA structures (ERC-3643 / ERC-1400 standard).</p>
+          </div>
+          <div class="arch-layer-card highlight-layer">
+            <div class="layer-badge highlight">Layer 3</div>
+            <h4>Protocol Layer</h4>
+            <p>Smart contract financial logic: priority waterfall cascades, catch-up distribution, and arbitrage-free pricing.</p>
+          </div>
+          <div class="arch-layer-card">
+            <div class="layer-badge">Layer 4</div>
+            <h4>Application Layer</h4>
+            <p>Intuitive Web/dApp dashboards for institutional LPs/GPs to inspect live DD metrics, approvals, and portfolio health.</p>
+          </div>
+          <div class="arch-layer-card">
+            <div class="layer-badge">Layer 5</div>
+            <h4>Aggregation Layer</h4>
+            <p>Multi-protocol liquidity aggregation, cross-fund NAV benchmarking, and secondary orderbook execution.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two Columns: Smart Contract Trust Architecture & Analytics/Agentic AI -->
+      <div class="dashboard-grid mb-24">
+        <!-- Smart Contract Trust Architecture -->
+        <div class="card col-span-6">
+          <div class="card-title-row">
+            <div>
+              <h3>Institutional LP Smart Contract Trust Architecture</h3>
+              <span class="subtext">Built upon verifiable rules, segregated controls, and audit trails</span>
+            </div>
+            <span class="badge-status-neutral">Design Architecture</span>
+          </div>
+
+          <div class="trust-features-grid">
+            <div class="trust-item">
+              <div class="trust-icon">🛡️</div>
+              <div class="trust-text">
+                <strong>Independent Security Audits</strong>
+                <p>Third-party code review (CertiK, OpenZeppelin) and transparent disclosure of vulnerability remediations.</p>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">🔑</div>
+              <div class="trust-text">
+                <strong>Privilege Segregation (Multisig 3-of-N)</strong>
+                <p>Strict separation of operational, compliance, and asset management keys; single-key compromise eliminated.</p>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">⏳</div>
+              <div class="trust-text">
+                <strong>Timelock Guardrails (48h Grace Period)</strong>
+                <p>Mandatory delay windows on critical parameter upgrades to allow LP pre-inspection and defense.</p>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">⚖️</div>
+              <div class="trust-text">
+                <strong>Dual-Record Reconciliation</strong>
+                <p>Real-time cross-verification between off-chain custodian ledgers and on-chain tokenized distribution states.</p>
+              </div>
+            </div>
+          </div>
+          <div class="subtext-box-disclaimer">
+            <span>※ Prototype interface for illustration. Does not represent finalized mainnet deployment, formal licensing, or active custodian integration.</span>
+          </div>
+        </div>
+
+        <!-- Cash Flow Analytics & Agentic AI Roadmap -->
+        <div class="card col-span-6">
+          <div class="card-title-row">
+            <div>
+              <h3>Cash Flow-Driven Performance Analytics &amp; Agentic AI</h3>
+              <span class="subtext">Calculated dynamically from user-defined commitment and distribution assumptions</span>
+            </div>
+            <span class="badge-pill-cyan">Analytics Lab</span>
+          </div>
+
+          <div class="metric-tags-cloud mb-16">
+            <span class="tag-metric">DCF</span>
+            <span class="tag-metric">Reverse DCF</span>
+            <span class="tag-metric">IRR</span>
+            <span class="tag-metric">MIRR</span>
+            <span class="tag-metric">MOIC</span>
+            <span class="tag-metric">TVPI</span>
+            <span class="tag-metric">DPI</span>
+            <span class="tag-metric">RVPI</span>
+          </div>
+          <p class="helper-text-muted mb-16">
+            Preqin, PitchBook, and CereFin benchmarks serve as conceptual comparative frameworks and are not directly affiliated with this demo.
+          </p>
+
+          <div class="agentic-ai-banner">
+            <div class="ai-banner-header">
+              <span class="icon">🤖</span>
+              <strong>Agentic AI Integration Roadmap</strong>
+            </div>
+            <p class="ai-banner-desc">
+              Harnessing Claude Code and Google Antigravity workflows to bridge raw alternative data (satellite imagery, freight logistics, patent momentum) with quantitative valuation engines to extract actionable Pure Alpha signals.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Core-Satellite Asset Allocation & Macro Risk -->
+      <div class="dashboard-grid mb-24">
+        <!-- Core-Satellite Allocation Card -->
+        <div class="card col-span-6">
+          <div class="card-title-row">
+            <div>
+              <h3>Portfolio Asset Allocation (Core-Satellite)</h3>
+              <span class="subtext">Synthetic parameter inputs · Does not represent actual client assets or FluxifyJME proprietary funds.</span>
+            </div>
+            <span class="badge-pill-cyan">Risk Parity Weights</span>
+          </div>
+
+          <div class="allocation-layout">
+            <div class="chart-donut-wrapper">
+              <canvas id="assetDonutCanvas" width="220" height="220"></canvas>
+              <div class="donut-center-label">
+                <span class="lbl">Allocation</span>
+                <strong class="val" id="totalAllocationWeight">100%</strong>
+              </div>
+            </div>
+
+            <div class="sliders-container">
+              <div class="alloc-slider-row">
+                <div class="alloc-label-row">
+                  <span class="dot-legend dot-blue"></span>
+                  <span class="lbl-name">Traditional Buyout &amp; Core Projects</span>
+                  <strong class="lbl-pct text-blue" id="sliderValEquity">40%</strong>
+                </div>
+                <input type="range" id="sliderEquity" min="0" max="100" value="40" oninput="updateAllocation()">
+              </div>
+
+              <div class="alloc-slider-row">
+                <div class="alloc-label-row">
+                  <span class="dot-legend dot-cyan"></span>
+                  <span class="lbl-name">Bonds &amp; Infrastructure (Senior Debt)</span>
+                  <strong class="lbl-pct text-cyan" id="sliderValFixedIncome">20%</strong>
+                </div>
+                <input type="range" id="sliderFixedIncome" min="0" max="100" value="20" oninput="updateAllocation()">
+              </div>
+
+              <div class="alloc-slider-row">
+                <div class="alloc-label-row">
+                  <span class="dot-legend dot-purple"></span>
+                  <span class="lbl-name">Private Equity Secondary</span>
+                  <strong class="lbl-pct text-purple" id="sliderValAlternative">30%</strong>
+                </div>
+                <input type="range" id="sliderAlternative" min="0" max="100" value="30" oninput="updateAllocation()">
+              </div>
+
+              <div class="alloc-slider-row">
+                <div class="alloc-label-row">
+                  <span class="dot-legend dot-emerald"></span>
+                  <span class="lbl-name">RWA &amp; Security Tokens (Tokenized Asset)</span>
+                  <strong class="lbl-pct text-emerald" id="sliderValSto">10%</strong>
+                </div>
+                <input type="range" id="sliderSto" min="0" max="100" value="10" oninput="updateAllocation()">
+              </div>
+
+              <div class="alloc-slider-row">
+                <div class="alloc-label-row">
+                  <span class="dot-legend dot-gold"></span>
+                  <span class="lbl-name">FX &amp; Cash Liquidity Buffer</span>
+                  <strong class="lbl-pct text-gold" id="sliderValFx">10%</strong>
+                </div>
+                <input type="range" id="sliderFx" min="0" max="100" value="10" oninput="updateAllocation()">
+              </div>
+
+              <div class="alloc-controls-btn-row">
+                <button class="btn btn-outline-dark btn-sm" onclick="resetAllocationPreset('default')">Reset to Default</button>
+                <button class="btn btn-outline-dark btn-sm" onclick="resetAllocationPreset('balanced')">Balanced Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Macro Risk Management Card -->
+        <div class="card col-span-6">
+          <div class="card-title-row">
+            <div>
+              <h3>Macro Risk &amp; Liquidity Scenarios</h3>
+              <span class="subtext">Simulate currency hedging ratios, interest rate spreads, and cash flow timing.</span>
+            </div>
+            <span class="badge-status-neutral">Macro Stress Test</span>
+          </div>
+
+          <div class="macro-risk-list">
+            <div class="macro-risk-item">
+              <span class="macro-num">01</span>
+              <div class="macro-desc">
+                <strong>FX Volatility &amp; Hedging Ratio</strong>
+                <p>Simulate portfolio return sensitivities under varied currency fluctuations and forward hedge coverages.</p>
+              </div>
+            </div>
+            <div class="macro-risk-item">
+              <span class="macro-num">02</span>
+              <div class="macro-desc">
+                <strong>Interest Rate Differential &amp; Carry Cost</strong>
+                <p>Model net cash flows accounting for cross-border swap basis spreads and friction transaction costs.</p>
+              </div>
+            </div>
+            <div class="macro-risk-item">
+              <span class="macro-num">03</span>
+              <div class="macro-desc">
+                <strong>Redemption &amp; Maturity Schedules</strong>
+                <p>Align underlying private debt maturities with investor lock-up expiries to maintain liquidity cushions.</p>
+              </div>
+            </div>
+            <div class="macro-risk-item">
+              <span class="macro-num">04</span>
+              <div class="macro-desc">
+                <strong>Cross-Currency Mismatch Protection</strong>
+                <p>Manage multi-currency LP allocations against USD-denominated underlying assets via automated hedging rules.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer-action">
+            <button class="btn btn-primary-toss w-100" onclick="consultMacroStrategy()">
+              <span>🌐 Consult AI on FX &amp; Macro Strategy</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Market TAM / SAM / SOM & 3-Tier Revenue Model (Business Plan Alignment) -->
+      <div class="card mb-24">
+        <div class="card-title-row">
+          <div>
+            <h3>Global Alternative Investment Market Opportunity (TAM / SAM / SOM) &amp; Monetization</h3>
+            <span class="subtext">Capturing the projected US$ 30 Trillion alternative assets market with scalable 3-stage revenue engines</span>
+          </div>
+          <span class="badge-pill-cyan">Business Plan 261102 ver3</span>
+        </div>
+
+        <div class="tam-grid mb-24">
+          <div class="tam-box">
+            <span class="tam-level">Total Addressable Market (TAM)</span>
+            <strong class="tam-val text-primary-light">US$ 30 Trillion</strong>
+            <p>Global Alternative AUM projected to expand from $16.8T (2023) to $29.2T (2029) and surpass $30T by 2030 (Preqin).</p>
+          </div>
+          <div class="tam-box">
+            <span class="tam-level">Domestic PEF Capital Commitments</span>
+            <strong class="tam-val text-emerald">US$ 110 Billion</strong>
+            <p>Over US$ 28.6 Billion in uncalled Dry Powder (27.5%) — urgent demand for rapid deal screening and transparent capital calls.</p>
+          </div>
+          <div class="tam-box">
+            <span class="tam-level">Annual VC Deal Deployment</span>
+            <strong class="tam-val text-cyan">US$ 8.5 Billion (9.5% YoY ↑)</strong>
+            <p>Top-tier VC houses managing upwards of US$ 5.0 Billion single AUM — manual spreadsheet workflows reaching critical limits.</p>
+          </div>
+          <div class="tam-box">
+            <span class="tam-level">SAM / SOM Willingness to Pay</span>
+            <strong class="tam-val text-purple">US$ 30k – 250k / year</strong>
+            <p>US$ 542.8M advisory market readiness for enterprise-grade B2B SaaS subscriptions covering automated DD, valuation, and risk.</p>
+          </div>
+        </div>
+
+        <!-- 3-Tier Revenue Model Grid -->
+        <div class="revenue-tiers-grid">
+          <div class="tier-card">
+            <div class="tier-badge">Tier 1 Revenue</div>
+            <h4>Tokenization &amp; Secondary Trading Fees</h4>
+            <div class="tier-rates">Issuance: 1.0 – 1.5% · Trading: 0.1 – 0.3%</div>
+            <p>Fee generation upon converting private equity shares into ERC-3643 tokens and automated market maker (AMM) DEX secondary swap volume.</p>
+          </div>
+          <div class="tier-card highlight-tier">
+            <div class="tier-badge highlight">Tier 2 Revenue</div>
+            <h4>AI Valuation Engine B2B SaaS Subscription</h4>
+            <div class="tier-rates">Monthly / Annual Institutional License</div>
+            <p>Delivering real-time fair value estimates and deal intelligence pipelines derived from unstructured alternative datasets via enterprise APIs.</p>
+          </div>
+          <div class="tier-card">
+            <div class="tier-badge">Tier 3 Revenue</div>
+            <h4>AI-DeFi Hybrid Fund Management Fees</h4>
+            <div class="tier-rates">Management: 1 – 2% p.a. · Carried Interest: 10 – 20%</div>
+            <p>Formation of proprietary on-chain algorithmic funds acquiring undervalued deep-tech secondary stakes above hurdle rate thresholds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 2: ADVISORY TRACK RECORD (Hana Capital Advisory Projects)
+         ====================================================================== -->
+    <section id="tab-consulting" class="tab-panel">
+      <div class="panel-header">
+        <div>
+          <div class="tag-supertitle">SELECTED ADVISORY WORK</div>
+          <h2>Investment Banking Advisory Track Record</h2>
+          <p class="panel-desc">
+            Mandate Entity: <strong>FluxifyJME (Advisory)</strong> — Proprietary client AUM and internal fund metrics are strictly excluded from public view.
+          </p>
+        </div>
+        <div class="header-buttons">
+          <span class="badge-consulting-status">Institutional Mandate Records</span>
+        </div>
+      </div>
+
+      <!-- Strict Confidentiality Notice Banner -->
+      <div class="compliance-banner-card mb-24">
+        <div class="compliance-inner">
+          <span class="shield-icon">🛡️</span>
+          <div>
+            <strong>Client Confidentiality &amp; Information Protection Policy</strong>
+            <p>Only disclosable advisory scopes are presented. Client internal AUM, deal counts, confidential returns, and portfolio allocation schedules are never disclosed or claimed as FluxifyJME proprietary track records.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two Advisory Project Cards -->
+      <div class="dashboard-grid mb-24">
+        <!-- Project 1: Hana Capital 2026.08-09 -->
+        <div class="card col-span-6 advisory-card">
+          <div class="card-title-row">
+            <div>
+              <div class="advisory-client-tag">Hana Capital · Investment Banking Team 1</div>
+              <h3 class="advisory-title">LP Fund Management IPS &amp; Risk Guidelines Advisory</h3>
+            </div>
+            <span class="advisory-date">2026.08 - 2026.09</span>
+          </div>
+
+          <div class="advisory-body">
+            <ul class="advisory-points-list">
+              <li>
+                <span class="bullet-dot">•</span>
+                <div>
+                  <strong>LP Fund Management Investment Policy Statement (IPS) Formulation</strong>
+                  <p>Structured expected return targets and risk tolerance boundaries for institutional limited partners (LPs), establishing asset class benchmark frameworks.</p>
+                </div>
+              </li>
+              <li>
+                <span class="bullet-dot">•</span>
+                <div>
+                  <strong>Risk Governance &amp; Asset Allocation Guidelines</strong>
+                  <p>Designed portfolio diversification criteria and downside risk boundaries (Semivariance, VaR) to withstand macro liquidity shocks.</p>
+                </div>
+              </li>
+              <li>
+                <span class="bullet-dot">•</span>
+                <div>
+                  <strong>Capital Deployment &amp; Exit Waterfall Process Structuring</strong>
+                  <p>Streamlined systematic Capital Call and realization distribution protocols to ensure end-to-end fund management transparency.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="advisory-footer">
+            <span class="role-badge">Role: External Advisory · Mandate Entity: FluxifyJME</span>
+          </div>
+        </div>
+
+        <!-- Project 2: Hana Capital 2025.07 -->
+        <div class="card col-span-6 advisory-card">
+          <div class="card-title-row">
+            <div>
+              <div class="advisory-client-tag">Hana Capital · Investment Banking Team 1</div>
+              <h3 class="advisory-title">Block Deal Off-market Acquisition Financial &amp; Regulatory Advisory</h3>
+            </div>
+            <span class="advisory-date">2025.07</span>
+          </div>
+
+          <div class="advisory-body">
+            <ul class="advisory-points-list">
+              <li>
+                <span class="bullet-dot">•</span>
+                <div>
+                  <strong>Block Deal Structuring &amp; Valuation Review</strong>
+                  <p>Conducted financial feasibility and deal structuring for off-market block trading of a 5.0% equity stake in listed subsidiary Co. G held by Co. K.</p>
+                </div>
+              </li>
+              <li>
+                <span class="bullet-dot">•</span>
+                <div>
+                  <strong>Capital Markets Act Insider Pre-Disclosure Compliance Review</strong>
+                  <p>Analyzed mandatory trading plan filing windows under the amended Capital Markets Act (enforced July 24, 2024, governing major shareholders and executives).</p>
+                </div>
+              </li>
+              <li>
+                <span class="bullet-dot">•</span>
+                <div>
+                  <strong>Regulatory Risk &amp; Timeline Architecture</strong>
+                  <p>Engineered comprehensive transaction timelines to proactively eliminate procedural risk and prevent allegations of unfair trading or material non-public information (MNPI) misuse.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="advisory-footer">
+            <span class="role-badge">Role: Financial &amp; Procedural Advisory · Mandate Entity: FluxifyJME · Legal determination subject to authorized counsel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 3: ANALYTICS LAB (Quant, MPT, KMV, Tranche, PE Metrics, ZK-ML)
+         ====================================================================== -->
+    <section id="tab-analytics" class="tab-panel">
+      <div class="panel-header">
+        <div>
+          <h2>Alternative Investment Analytics &amp; Tranche Waterfall Simulator</h2>
+          <p class="panel-desc">
+            Explore quantitative portfolio optimization, KMV structural credit modeling, and smart contract waterfall simulations. Synthetic educational models.
+          </p>
+        </div>
+        <div class="header-buttons">
+          <button class="btn btn-primary-toss" onclick="optimizeMaxSharpe()">
+            <span>🎯 Optimize Tangency (Max Sharpe)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 5 Global Quant Strategies Grid (Appendix A) -->
+      <div class="card mb-24">
+        <div class="card-title-row">
+          <div>
+            <h3>Top-Tier Quantitative Investment Frameworks (Appendix A)</h3>
+            <span class="subtext">Isolating White Noise (&epsilon;) to systematically extract structural Pure Alpha signals</span>
+          </div>
+          <button class="btn btn-outline-dark btn-sm" onclick="openQuantDetailModal()">
+            <span>📐 View Pure Alpha Mathematical Formulas</span>
+          </button>
+        </div>
+
+        <div class="quant-strategies-grid">
+          <div class="strategy-card">
+            <div class="strat-header">
+              <span class="strat-badge">A.1</span>
+              <h4>HFT &amp; Market Making</h4>
+            </div>
+            <div class="strat-focus">Microstructure &amp; Liquidity</div>
+            <p>Capturing transient order book imbalances and sub-millisecond execution opportunities. (Citadel Securities, Jump Trading, HRT, Tower)</p>
+          </div>
+
+          <div class="strategy-card">
+            <div class="strat-header">
+              <span class="strat-badge">A.2</span>
+              <h4>Options &amp; Arbitrage-Free</h4>
+            </div>
+            <div class="strat-focus">Q-Measure &amp; Delta Hedging</div>
+            <p>Arbitrage-free pricing models, log-normal volatility spreads, and variance swaps. (Jane Street, SIG Susquehanna, Optiver, DRW)</p>
+          </div>
+
+          <div class="strategy-card highlight-strat">
+            <div class="strat-header">
+              <span class="strat-badge highlight">A.3</span>
+              <h4>Systematic Credit</h4>
+            </div>
+            <div class="strat-focus">Structural Default &amp; Merton/KMV</div>
+            <p>Durbin-Watson residual testing, Jarque-Bera fat-tail filtering, and structural Distance-to-Default (DD). (Renaissance, Two Sigma, Millennium, KMV)</p>
+          </div>
+
+          <div class="strategy-card">
+            <div class="strat-header">
+              <span class="strat-badge">A.4</span>
+              <h4>Trend Following</h4>
+            </div>
+            <div class="strat-focus">Momentum &amp; Geometric Return</div>
+            <p>Exponential Moving Averages (EMA) and time-weighted geometric compounding over asymmetric payoffs. (Man Group AHL, Winton, Millburn)</p>
+          </div>
+
+          <div class="strategy-card">
+            <div class="strat-header">
+              <span class="strat-badge">A.5</span>
+              <h4>Factor Investing</h4>
+            </div>
+            <div class="strat-focus">Multi-Factor &amp; Cash Flow Valuation</div>
+            <p>Spearman rank correlation IC testing, Reverse DCF, Residual Income Models (RIM), and NPV/IRR vs MOIC. (AQR, Robeco)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Markowitz Modern Portfolio Theory (MPT) Efficient Frontier -->
+      <div class="card mb-24">
+        <div class="card-title-row">
+          <div>
+            <h3>Markowitz Efficient Frontier &amp; Capital Allocation Line (CAL)</h3>
+            <span class="subtext">Dynamic frontier curve and optimal tangency portfolio solver</span>
+          </div>
+          <span class="badge-status-green">Optimal Tangency (Rf: 3.5%)</span>
+        </div>
+
+        <div class="frontier-grid">
+          <div class="frontier-chart-pane">
+            <canvas id="frontierCanvas" width="620" height="300"></canvas>
+          </div>
+
+          <div class="frontier-controls-pane">
+            <div class="form-group mb-16">
+              <label>Risk-Free Rate (Rf, 3-Yr Treasury):</label>
+              <div class="input-with-unit">
+                <input type="number" id="rfInput" value="3.5" step="0.1" min="0" max="10" oninput="redrawFrontier()">
+                <span class="unit">%</span>
+              </div>
+            </div>
+
+            <div class="form-group mb-20">
+              <label>Investor Risk Aversion Coefficient (A): <strong id="riskAversionVal" class="text-cyan">4</strong></label>
+              <input type="range" id="riskAversionSlider" min="1" max="10" value="4" oninput="onRiskAversionChange()">
+              <div class="slider-labels">
+                <span>Aggressive (1)</span>
+                <span>Moderate (4)</span>
+                <span>Conservative (10)</span>
+              </div>
+            </div>
+
+            <div class="frontier-stats-box">
+              <div class="frontier-stat-row">
+                <span class="stat-lbl">Optimal Sharpe Ratio:</span>
+                <strong class="stat-val text-primary-light" id="optSharpeVal">0.48</strong>
+              </div>
+              <div class="frontier-stat-row">
+                <span class="stat-lbl">Expected Return (E[R]):</span>
+                <strong class="stat-val text-emerald" id="optReturnVal">9.11%</strong>
+              </div>
+              <div class="frontier-stat-row">
+                <span class="stat-lbl">Portfolio Volatility (&sigma;):</span>
+                <strong class="stat-val text-cyan" id="optRiskVal">11.80%</strong>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-cyan w-100 mt-16" onclick="applyOptimalAllocation()">
+              <span>Apply Tangency Weights to Portfolio</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- KMV Merton Structural Credit Risk Model -->
+      <div class="card mb-24">
+        <div class="card-title-row">
+          <div>
+            <h3>KMV Merton Structural Credit Model (Distance-to-Default &amp; EDF)</h3>
+            <span class="subtext">Forward-looking default probability derived from equity volatility, preceding lagging rating agency downgrades</span>
+          </div>
+          <span class="badge-pill-cyan">Leading Credit Model</span>
+        </div>
+
+        <div class="kmv-model-grid">
+          <div class="kmv-inputs-panel">
+            <div class="grid-2-inputs">
+              <div class="form-group">
+                <label>Firm Asset Value (V, US$ M):</label>
+                <input type="number" id="kmvAssetV" value="1000" step="50" oninput="calculateKMVModel()">
+              </div>
+              <div class="form-group">
+                <label>Default Point Debt (D, US$ M):</label>
+                <input type="number" id="kmvDebtD" value="600" step="50" oninput="calculateKMVModel()">
+              </div>
+            </div>
+            <div class="grid-2-inputs">
+              <div class="form-group">
+                <label>Asset Expected Return (&mu;, % p.a.):</label>
+                <input type="number" id="kmvMu" value="10.0" step="0.5" oninput="calculateKMVModel()">
+              </div>
+              <div class="form-group">
+                <label>Asset Volatility (&sigma;<sub>V</sub>, % p.a.):</label>
+                <input type="number" id="kmvSigma" value="20.0" step="1.0" oninput="calculateKMVModel()">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Debt Maturity Horizon (T, Years):</label>
+              <input type="number" id="kmvT" value="1.0" step="0.5" min="0.5" max="5.0" oninput="calculateKMVModel()">
+            </div>
+          </div>
+
+          <div class="kmv-outputs-panel" id="kmvOutputBox">
+            <!-- Dynamically populated by calculateKMVModel() -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Structured Finance Tranche Waterfall Simulator -->
+      <div class="card mb-24">
+        <div class="card-title-row">
+          <div>
+            <h3>Structured Finance Tranche Waterfall Simulator</h3>
+            <span class="subtext">Loss-absorption sequence across Senior, Mezzanine, and Junior equity tranches</span>
+          </div>
+          <span class="badge-pill-cyan">Smart Contract Waterfall</span>
+        </div>
+
+        <div class="tranche-grid">
+          <div class="tranche-config">
+            <h4>Tranche Capital Structure (US$ 100,000 Scenario)</h4>
+
+            <div class="tranche-input-group senior-group">
+              <div class="tranche-header-line">
+                <strong>Senior Debt Tranche</strong>
+                <span class="badge-tag-blue">Capital Preservation First</span>
+              </div>
+              <div class="grid-2-inputs">
+                <div>
+                  <label>Principal Weight (%)</label>
+                  <input type="number" id="seniorRatio" value="60" min="10" max="90" onchange="updateTrancheModel()">
+                </div>
+                <div>
+                  <label>Coupon Yield (% p.a.)</label>
+                  <input type="number" id="seniorYield" value="5" step="0.1" onchange="updateTrancheModel()">
+                </div>
+              </div>
+            </div>
+
+            <div class="tranche-input-group mezz-group">
+              <div class="tranche-header-line">
+                <strong>Mezzanine Tranche (CB/BW/RCPS)</strong>
+                <span class="badge-tag-cyan">Balanced Yield Sweet Spot</span>
+              </div>
+              <div class="grid-2-inputs">
+                <div>
+                  <label>Principal Weight (%)</label>
+                  <input type="number" id="mezzRatio" value="25" min="5" max="50" onchange="updateTrancheModel()">
+                </div>
+                <div>
+                  <label>Target Coupon + YTM (%)</label>
+                  <input type="number" id="mezzYield" value="9" step="0.1" onchange="updateTrancheModel()">
+                </div>
+              </div>
+            </div>
+
+            <div class="tranche-input-group junior-group">
+              <div class="tranche-header-line">
+                <strong>Junior / Equity Tranche</strong>
+                <span class="badge-tag-purple">Residual Upside · First Loss Absorption</span>
+              </div>
+              <div class="grid-2-inputs">
+                <div>
+                  <label>Principal Weight (%)</label>
+                  <input type="number" id="juniorRatio" value="15" min="5" max="50" onchange="updateTrancheModel()">
+                </div>
+                <div>
+                  <label>Target Upside Return (%)</label>
+                  <input type="number" id="juniorYield" value="15" step="0.5" onchange="updateTrancheModel()">
+                </div>
+              </div>
+            </div>
+
+            <div class="scenario-slider-box">
+              <label>Asset Recovery Rate Scenario: <strong id="recoveryRateVal" class="text-cyan">100%</strong></label>
+              <input type="range" id="recoveryRateSlider" min="30" max="180" value="100" oninput="onRecoveryRateChange()">
+              <div class="slider-labels">
+                <span>30% (Severe Distress)</span>
+                <span>100% (Full Par Recovery)</span>
+                <span>180% (Outperformance)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tranche-visual">
+            <h4>Waterfall Cash Flow Payout &amp; Loss Absorption</h4>
+            <div class="chart-wrapper">
+              <canvas id="trancheCanvas" width="460" height="240"></canvas>
+            </div>
+            
+            <div class="tranche-payout-table-box">
+              <table class="fin-table">
+                <thead>
+                  <tr>
+                    <th>Tranche</th>
+                    <th>Principal</th>
+                    <th>Recovered</th>
+                    <th>Realized Return</th>
+                    <th>Loss Absorption Status</th>
+                  </tr>
+                </thead>
+                <tbody id="trancheTableBody"></tbody>
+              </table>
+            </div>
+
+            <div class="rwa-explainer-card">
+              <div class="rwa-icon">🔗</div>
+              <div class="rwa-text">
+                <strong>Tokenized Asset &amp; Smart Contract Linkage Design</strong>
+                <p>
+                  Accredited investor onboarding, transfer restrictions, and waterfall rules are enforced programmatically. Illustrative simulation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cash Flow, Valuation, Tax & FX Laboratory -->
+      <div class="card mb-24">
+        <div class="card-title-row">
+          <div>
+            <h3>Cash Flow, Valuation, Tax &amp; FX Analytics Laboratory</h3>
+            <span class="subtext">Interactive parameter modeling · Synthetic scenario calculation</span>
+          </div>
+          <span class="badge-status-neutral">Interactive Engines</span>
+        </div>
+
+        <div class="dashboard-grid">
+          <!-- LP Performance Metrics -->
+          <div class="card col-span-6 bg-darker">
+            <h4>LP Fund Performance Metrics</h4>
+            <div class="grid-2-inputs">
+              <div class="form-group">
+                <label>Paid-in Capital (US$ M):</label>
+                <input type="number" id="lpPaidIn" value="100" oninput="calculateLPMetrics()">
+              </div>
+              <div class="form-group">
+                <label>Cumulative Distributions (US$ M):</label>
+                <input type="number" id="lpDistributed" value="28" oninput="calculateLPMetrics()">
+              </div>
+            </div>
+            <div class="grid-2-inputs">
+              <div class="form-group">
+                <label>Remaining NAV (US$ M):</label>
+                <input type="number" id="lpRemainingNav" value="90" oninput="calculateLPMetrics()">
+              </div>
+              <div class="form-group">
+                <label>Holding Period (Years):</label>
+                <input type="number" id="lpHoldingPeriod" value="3" oninput="calculateLPMetrics()">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Reinvestment Rate Assumption (%):</label>
+              <input type="number" id="lpReinvestRate" value="3.5" step="0.1" oninput="calculateLPMetrics()">
+            </div>
+
+            <div class="calc-results-grid">
+              <div class="res-box">
+                <span class="lbl">MOIC / TVPI</span>
+                <strong class="val text-primary-light" id="metricMoic">1.18x</strong>
+              </div>
+              <div class="res-box">
+                <span class="lbl">DPI</span>
+                <strong class="val text-cyan" id="metricDpi">0.28x</strong>
+              </div>
+              <div class="res-box">
+                <span class="lbl">RVPI</span>
+                <strong class="val" id="metricRvpi">0.90x</strong>
+              </div>
+              <div class="res-box">
+                <span class="lbl">CAGR Simple IRR</span>
+                <strong class="val text-emerald" id="metricIrr">3.23%</strong>
+              </div>
+              <div class="res-box col-span-2">
+                <span class="lbl">Simple MIRR*</span>
+                <strong class="val text-purple" id="metricMirr">3.56%</strong>
+              </div>
+            </div>
+            <small class="helper-text-muted">*Simplified scenario based on terminal redemption. Intermediate cash flow timing requires date-specific XIRR modeling.</small>
+          </div>
+
+          <!-- DCF - Reverse DCF Engine -->
+          <div class="card col-span-6 bg-darker">
+            <h4>DCF &amp; Reverse DCF Valuation Engine</h4>
+            <div class="grid-2-inputs">
+              <div class="form-group">
+                <label>Year 1 Free Cash Flow (FCF1, US$ M):</label>
+                <input type="number" id="dcfFcf1" value="10" oninput="calculateDCFMetrics()">
+              </div>
+              <div class="form-group">
+                <label>Discount Rate (WACC, %):</label>
+                <input type="number" id="dcfDiscountRate" value="10" oninput="calculateDCFMetrics()">
+              </div>
+            </div>
+            <div class="grid-2-inputs">
+              <div class="form-group">
+                <label>Terminal Growth Rate (g, %):</label>
+                <input type="number" id="dcfTerminalGrowth" value="2" oninput="calculateDCFMetrics()">
+              </div>
+              <div class="form-group">
+                <label>Current Enterprise Value (US$ M):</label>
+                <input type="number" id="dcfCurrentVal" value="100" oninput="calculateDCFMetrics()">
+              </div>
+            </div>
+
+            <div class="calc-results-grid mt-20">
+              <div class="res-box">
+                <span class="lbl">Gordon Growth DCF Value</span>
+                <strong class="val text-primary-light" id="dcfOutputVal">US$ 125.00M</strong>
+              </div>
+              <div class="res-box">
+                <span class="lbl">Reverse DCF Implied Growth</span>
+                <strong class="val text-emerald" id="dcfReverseGrowth">0.00%</strong>
+              </div>
+            </div>
+            <small class="helper-text-muted">Single-stage growth approximation. Does not substitute comprehensive capital structure modeling.</small>
+          </div>
+
+          <!-- FX Conversion & Hedging Cost -->
+          <div class="card col-span-6 bg-darker">
+            <h4>FX Hedging &amp; Conversion Friction Model</h4>
+            <div class="grid-2-inputs">
+              <div class="form-group">
+                <label>Foreign Currency Amount (EUR / Local):</label>
+                <input type="number" id="fxForeignAmount" value="100000" oninput="calculateFXMetrics()">
+              </div>
+              <div class="form-group">
+                <label>Exchange Rate (US$ per 1 Unit):</label>
+                <input type="number" id="fxExchangeRate" value="1.08" step="0.01" oninput="calculateFXMetrics()">
+              </div>
+            </div>
+            <div class="grid-2-inputs">
+              <div class="form-group">
+                <label>Hedge Basis Cost (bp):</label>
+                <input type="number" id="fxHedgeCostBp" value="25" oninput="calculateFXMetrics()">
+              </div>
+              <div class="form-group">
+                <label>Execution Spread Fee (bp):</label>
+                <input type="number" id="fxExchangeFeeBp" value="15" oninput="calculateFXMetrics()">
+              </div>
+            </div>
+
+            <div class="calc-results-grid">
+              <div class="res-box">
+                <span class="lbl">Gross Converted Value</span>
+                <strong class="val text-primary-light" id="fxConvertedKrw">US$ 108,000</strong>
+              </div>
+              <div class="res-box">
+                <span class="lbl">Estimated Total Friction Cost</span>
+                <strong class="val text-rose" id="fxTotalCostKrw">US$ 432</strong>
+              </div>
+              <div class="res-box col-span-2">
+                <span class="lbl">Net Realized Cash Flow</span>
+                <strong class="val text-emerald" id="fxNetKrw">US$ 107,568</strong>
+              </div>
+            </div>
+            <small class="helper-text-muted">Synthetic conversion baseline based on user-entered exchange rate.</small>
+          </div>
+
+          <!-- Tax Simulation -->
+          <div class="card col-span-6 bg-darker">
+            <h4>Tax Impact Scenario Simulation</h4>
+            <div class="grid-2-inputs">
+              <div class="form-group">
+                <label>Taxable Capital Gain Base (US$):</label>
+                <input type="number" id="taxTaxableBase" value="100000" oninput="calculateTaxMetrics()">
+              </div>
+              <div class="form-group">
+                <label>Effective Tax Rate (%):</label>
+                <input type="number" id="taxRatePercent" value="20" oninput="calculateTaxMetrics()">
+              </div>
+            </div>
+
+            <div class="calc-results-grid mt-20">
+              <div class="res-box">
+                <span class="lbl">Estimated Tax Liability</span>
+                <strong class="val text-rose" id="taxEstTax">US$ 20,000</strong>
+              </div>
+              <div class="res-box">
+                <span class="lbl">After-Tax Net Realization</span>
+                <strong class="val text-emerald" id="taxEstNet">US$ 80,000</strong>
+              </div>
+            </div>
+            <small class="helper-text-muted">Simplified demonstration. Does not reflect jurisdiction-specific treaty rates or deductions. Not tax advice.</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Advanced ZK-ML & Federated Learning Architecture (Appendix B.6) -->
+      <div class="card">
+        <div class="card-title-row">
+          <div>
+            <h3>Advanced ZK-ML &amp; Federated Learning On-Chain Risk Bridge (Appendix B.6)</h3>
+            <span class="subtext">Cross-Silo Federated Learning · ZK-SNARKs Dynamic LTV Contraction &amp; Margin Call Defense</span>
+          </div>
+          <span class="badge-pill-cyan">Dual Trigger Risk Shield</span>
+        </div>
+
+        <div class="zkml-grid">
+          <div class="zkml-explainer">
+            <h4>Federated Learning &amp; ZK-ML Risk Architecture</h4>
+            <ul class="zkml-feature-list">
+              <li>
+                <strong>Hybrid Vertical/Horizontal FL (VFL + HFL):</strong>
+                Zero raw data extraction; institutional models exchange only privacy-shielded gradients (SecAgg, DP, Homomorphic Encryption).
+              </li>
+              <li>
+                <strong>RiskModelRegistry.sol &amp; DynamicPricingEngine.sol:</strong>
+                Probability of Default (PD) and Loss Given Default (LGD) verified via ZK-SNARKs on-chain proofs for real-time dynamic interest rates:
+                <code>r_dynamic(t) = r_base + &alpha;&middot;E[PD] + &beta;&middot;LGD</code>
+              </li>
+              <li>
+                <strong>RWAVault.sol Dynamic LTV Auto-Contraction:</strong>
+                Automated collateral recognition ratio contraction and emergency circuit breakers:
+                <code>LTV_dynamic = max(LTV_min, LTV_base - (w1&middot;&Delta;PD + w2&middot;&Delta;LGD))</code>
+              </li>
+              <li>
+                <strong>Margin Call with Dynamic Grace Period:</strong>
+                When Health Factor (HF) drops below 1.0, positions transition to grace periods rather than instant liquidations, culminating in slippage-free Dutch Auctions.
+              </li>
+            </ul>
+          </div>
+
+          <div class="zkml-simulator-box">
+            <h4>Health Factor (HF) Real-Time Simulator</h4>
+            <div class="form-group mb-12">
+              <label>Collateral Recognized Value (US$ M):</label>
+              <input type="number" id="hfCollateralVal" value="120" step="5" oninput="calculateHealthFactor()">
+            </div>
+            <div class="form-group mb-12">
+              <label>Total Outstanding Debt (US$ M):</label>
+              <input type="number" id="hfTotalDebt" value="80" step="5" oninput="calculateHealthFactor()">
+            </div>
+            <div class="form-group mb-16">
+              <label>Dynamic LTV (%) Slider: <strong id="dynamicLtvVal" class="text-cyan">70%</strong></label>
+              <input type="range" id="hfBaseLtv" min="30" max="90" value="70" oninput="calculateHealthFactor()">
+            </div>
+
+            <div class="hf-result-card">
+              <div class="hf-num-row">
+                <span class="hf-lbl">Health Factor (HF):</span>
+                <strong class="hf-num text-emerald" id="healthFactorVal">1.05</strong>
+              </div>
+              <div class="hf-status-row">
+                <span class="hf-badge" id="marginCallBadge">Safe</span>
+                <span class="hf-formula">HF = (Collateral &times; LTV) / Total Debt</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 4: PARTNERSHIP PREVIEW (App-in-Toss & Viva Republica M&A Exit)
+         ====================================================================== -->
+    <section id="tab-partnership" class="tab-panel">
+      <div class="panel-header">
+        <div>
+          <h2>Enterprise Expansion Preview · App-in-Toss</h2>
+          <p class="panel-desc">
+            Evaluating institutional LP/GP analysis workflows and high-volume retail fractional distribution. Strategic partnership concept.
+          </p>
+        </div>
+        <div class="header-buttons">
+          <button class="btn btn-outline-cyan" onclick="openKycModal()">
+            <span>Institutional Onboarding Flow</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="dashboard-grid mb-24">
+        <!-- Toss Mobile App Shell Mockup Preview (TDS Toss Design System) -->
+        <div class="card col-span-5 toss-mockup-wrapper">
+          <div class="card-title-row">
+            <div>
+              <h3>Toss Mini-App Preview (TDS)</h3>
+              <span class="subtext">Alternative asset fractional marketplace within Toss superapp</span>
+            </div>
+            <span class="badge-toss">App-in-Toss Mode</span>
+          </div>
+
+          <!-- Smartphone Shell Frame -->
+          <div class="toss-phone-frame">
+            <div class="phone-notch"></div>
+            <div class="toss-header">
+              <span class="toss-back-btn">←</span>
+              <strong>Alternative Assets</strong>
+              <div class="toss-header-icons">
+                <span class="toss-icon">🔍</span>
+                <span class="toss-icon">☰</span>
+              </div>
+            </div>
+
+            <div class="toss-body">
+              <div class="toss-banner">
+                <span class="toss-pill">UI Preview</span>
+                <h4>Institutional Alternative<br>Deals from US$ 100</h4>
+                <p>Curated Senior &amp; Mezzanine Tranches · Smart Contract Protection</p>
+              </div>
+
+              <!-- Tranche Senior Card -->
+              <div class="toss-card">
+                <div class="toss-card-header">
+                  <span class="toss-card-tag">Senior Tranche</span>
+                  <span class="text-muted-toss">Capital Preserved</span>
+                </div>
+                <strong>Industrial Buyout Fund I</strong>
+                <div class="toss-card-metric">
+                  <div>
+                    <span class="toss-meta-lbl">Target Return</span>
+                    <strong class="text-toss-blue">5.8% p.a.</strong>
+                  </div>
+                  <div>
+                    <span class="toss-meta-lbl">Min Amount</span>
+                    <strong>US$ 100</strong>
+                  </div>
+                </div>
+                <button class="toss-action-btn" onclick="simulateTossPayment()">Instant Investment via Toss Pay</button>
+              </div>
+
+              <!-- Tranche Mezzanine Card -->
+              <div class="toss-card">
+                <div class="toss-card-header">
+                  <span class="toss-card-tag highlight">Mezzanine Tranche</span>
+                  <span class="text-toss-blue">Sweet Spot</span>
+                </div>
+                <strong>AI Semiconductor HBM Mezzanine (CB/BW)</strong>
+                <div class="toss-card-metric">
+                  <div>
+                    <span class="toss-meta-lbl">Target YTM</span>
+                    <strong class="text-toss-blue">9.0% p.a.</strong>
+                  </div>
+                  <div>
+                    <span class="toss-meta-lbl">Min Amount</span>
+                    <strong>US$ 500</strong>
+                  </div>
+                </div>
+                <button class="toss-action-btn primary" onclick="simulateTossPayment()">Invest with TOSSKRW (Gasless)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two-Track M&A Exit Roadmap & Strategic Advantages -->
+        <div class="card col-span-7">
+          <div class="card-title-row">
+            <div>
+              <h3>Institutional Validation &amp; Strategic M&amp;A Roadmap</h3>
+              <span class="subtext">B2B Institutional Track Record ➔ App-in-Toss Consumer Scaling ➔ Strategic Exit</span>
+            </div>
+            <span class="badge-pill-cyan">Two-Track Exit</span>
+          </div>
+
+          <div class="roadmap-timeline">
+            <div class="timeline-step">
+              <div class="step-circle">1</div>
+              <div class="step-content">
+                <strong>[Track 1] Institutional B2B Validation &amp; Track Record</strong>
+                <p>
+                  Validate robust IPS compliance, audit trails, and waterfall calculations across top-tier GP partners, securing US$ 200M in platform AUM.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="step-circle">2</div>
+              <div class="step-content">
+                <strong>[Track 2] B2B2C Expansion via App-in-Toss Mini-App</strong>
+                <p>
+                  Package proven waterfall engines into Toss Mini-Apps to onboard 30M+ retail users into fractional alternative assets, lowering customer acquisition cost (CAC) toward zero.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="step-circle">3</div>
+              <div class="step-content">
+                <strong>[Stage 3] Strategic M&amp;A Exit to Viva Republica (Toss)</strong>
+                <p>
+                  Position FluxifyJME as the core alternative investment and tokenized asset engine powering Toss Securities and Toss Bank, culminating in an optimal strategic acquisition.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="strategic-principles-box mb-20">
+            <div class="principle-header">
+              <span class="icon">💡</span>
+              <strong>Core Execution Principle</strong>
+            </div>
+            <p>
+              "Our primary commitment is enabling institutional investors to verify asset rights, cash flow paths, and governance rules with mathematical certainty. Consumer scaling follows rigorous investor protection."
+            </p>
+          </div>
+
+          <!-- Why Toss Mini-App Strategic Pillars -->
+          <div class="toss-pillars-grid">
+            <div class="pillar-box">
+              <strong>30M+ User Ecosystem</strong>
+              <p>Instant zero-friction execution directly within the Toss superapp without separate app installs.</p>
+            </div>
+            <div class="pillar-box">
+              <strong>Hyper-Targeted Push Marketing</strong>
+              <p>Leveraging Toss financial behavior data to deliver personalized alternative investment opportunities.</p>
+            </div>
+            <div class="pillar-box">
+              <strong>TDS &amp; TOSSKRW Settlement</strong>
+              <p>Native Toss Design System UX and KRW-pegged stablecoin for gasless, seamless yield distribution.</p>
+            </div>
+            <div class="pillar-box">
+              <strong>Embedded Web3 Smart Wallets</strong>
+              <p>Direct API integration with in-app non-custodial wallets, eliminating complex private key management.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 5: FOUNDER PROFILE (Jamie Song · PE/VC/AC · Track Record)
+         ====================================================================== -->
+    <section id="tab-founder" class="tab-panel">
+      <div class="panel-header">
+        <div>
+          <h2>Jamie (JaeMin) Song · Founder Profile &amp; Core Expertise</h2>
+          <p class="panel-desc">Cross-border PE/VC | Global Macro &amp; Event-Driven Hedge Fund Manager | Chief Portfolio Manager</p>
+        </div>
+        <div class="header-buttons">
+          <a href="https://www.linkedin.com/in/jme-song/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyan">
+            <span>🔗 LinkedIn Profile</span>
+          </a>
+          <a href="https://app.notion.com/p/JmeMind-f8d28f8d40d94279a1c6a8f2dec76690" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark">
+            <span>📝 Notion (JmeMind)</span>
+          </a>
+          <button class="btn btn-primary-toss" onclick="openAiChatModal()">
+            <span>🤖 Request AI Advisory</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Founder Hero Card with Official Metallic Emblem -->
+      <div class="card mb-24 founder-hero-card">
+        <div class="founder-hero-grid">
+          <div class="founder-avatar-large">
+            <img src="assets/logo_j.png" alt="Jamie Song Logo J" class="founder-img-large">
+          </div>
+          <div class="founder-hero-info">
+            <div class="founder-hero-title">
+              <h3>Jamie (JaeMin) Song</h3>
+              <span class="hero-role-pill">Chief Portfolio Manager / Founder &amp; CEO</span>
+            </div>
+            <div class="founder-domains-line">
+              <strong>Alternative Investment | PE/HF | Digital Asset | RWA ⊃ STO</strong>
+            </div>
+            <p class="founder-hero-bio">
+              "Translating Traditional Finance (TradFi) quantitative models into Web3 smart contracts to overcome liquidity constraints in private alternative markets — <strong>FluxifyJME</strong>"
+            </p>
+            <p class="founder-hero-details">
+              Cross-border private equity (PE), venture capital (VC), and accelerator (AC) professional experienced in investment review, startup valuation, strategic FP&amp;A, and fund formation, management, and liquidation. Graduated from The University of Newcastle (Australia), Faculty of Business and Law.
+            </p>
+            <div class="founder-tags-row">
+              <span class="cert-chip">#Cross-border PEF Management</span>
+              <span class="cert-chip">#Certified Research Analyst (CRA)</span>
+              <span class="cert-chip">#Certified Investment Manager (CIM)</span>
+              <span class="cert-chip">#FP&amp;A Startup Valuation</span>
+              <span class="cert-chip">#Global Macro &amp; Event-Driven</span>
+              <span class="cert-chip">#ITT Business English Interpretation (1st)</span>
+              <span class="cert-chip">#ITT Translation (1st)</span>
+              <span class="cert-chip">#Investor Relations (IR) Consultant</span>
+              <span class="cert-chip">#ISO 9001·14001 Lead Auditor</span>
+              <span class="cert-chip">#KBI Digital Finance (DT)</span>
+              <span class="cert-chip">#AI &amp; Blockchain Specialist</span>
+              <span class="cert-chip">#Maekyung TEST (High Honors)</span>
+              <span class="cert-chip">#Securities Advisory Broker</span>
+              <span class="cert-chip">#Variable Insurance License</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Capabilities Matrix (English Summary & Korean Detail) -->
+      <div class="dashboard-grid mb-24">
+        <!-- English Executive Summary Card -->
+        <div class="card col-span-6">
+          <div class="card-title-row">
+            <div>
+              <h3>Professional Summary &amp; Core Strengths</h3>
+              <span class="subtext">Global Investor &amp; Strategic FP&amp;A Profile</span>
+            </div>
+            <span class="badge-pill-cyan">Global Standard</span>
+          </div>
+          <ul class="pro-summary-list">
+            <li>
+              <div class="pro-bullet">✓</div>
+              <div class="pro-content">
+                <strong>PE/VC/AC investor with startup valuation and FP&amp;A expertise.</strong>
+                <p>Extensive hands-on capability in DCF, LBO, Reverse DCF, and financial planning &amp; analysis for early to pre-IPO stage ventures.</p>
+              </div>
+            </li>
+            <li>
+              <div class="pro-bullet">✓</div>
+              <div class="pro-content">
+                <strong>Data-driven strategist with strong technical proficiency in product development and market intelligence.</strong>
+                <p>Translating complex financial engineering algorithms into scalable Web/App architecture and intuitive UI/UX workflows.</p>
+              </div>
+            </li>
+            <li>
+              <div class="pro-bullet">✓</div>
+              <div class="pro-content">
+                <strong>Continuously learning cutting-edge technologies, conducting feasibility studies, and leveraging AI/ML for research.</strong>
+                <p>Rapid synthesis and deep technical due diligence across AI, BioTech, Blockchain/DeFi, SDV, AR/VR, and Quantum Computing.</p>
+              </div>
+            </li>
+            <li>
+              <div class="pro-bullet">✓</div>
+              <div class="pro-content">
+                <strong>Highly motivated and detail-oriented professional with extensive hands-on negotiation skills.</strong>
+                <p>Proven track record in structuring term sheets, LP-GP governance agreements, and cross-border partnership alignments.</p>
+              </div>
+            </li>
+            <li>
+              <div class="pro-bullet">✓</div>
+              <div class="pro-content">
+                <strong>Reliable translator (English &harr; Korean) with proven skills in written document translation.</strong>
+                <p>Professional cross-border translation and interpretation for international innovation summits and cross-border M&amp;A deals.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Domain Expertise System -->
+        <div class="card col-span-6">
+          <div class="card-title-row">
+            <div>
+              <h3>Core Domain Competencies &amp; Execution Focus</h3>
+              <span class="subtext">Deal Screening · Alternative Investments · DeepTech Due Diligence</span>
+            </div>
+            <span class="badge-pill-cyan">Domain Expertise</span>
+          </div>
+          <div class="domain-cards-list">
+            <div class="domain-item">
+              <div class="domain-icon">💼</div>
+              <div class="domain-body">
+                <strong>PE / VC / AC &amp; Startup Enterprise Valuation (FP&amp;A)</strong>
+                <p>DCF, LBO, and Comparable Companies analysis from early stage to Pre-IPO; Cap Table architecture, financial consulting, and capital raise structuring.</p>
+              </div>
+            </div>
+            <div class="domain-item">
+              <div class="domain-icon">📈</div>
+              <div class="domain-body">
+                <strong>Alternative Investment &amp; Global Hedge Fund Strategies</strong>
+                <p>Global Macro &amp; Event-Driven hedge fund portfolio management; Mezzanine (CB/BW/RCPS) tranche structuring and arbitrage-free pricing.</p>
+              </div>
+            </div>
+            <div class="domain-item">
+              <div class="domain-icon">⚡</div>
+              <div class="domain-body">
+                <strong>Accelerated Learning &amp; DeepTech Feasibility Studies</strong>
+                <p>Commercial and technical feasibility due diligence across AI, BioTech, Blockchain (DeFi/RWA/STO), AR/VR, SDV (Software-Defined Vehicles), and Quantum Computing.</p>
+              </div>
+            </div>
+            <div class="domain-item">
+              <div class="domain-icon">🔍</div>
+              <div class="domain-body">
+                <strong>LLM &amp; Deep Research Curation</strong>
+                <p>Automating ingestion of unstructured alternative data (traffic, patents, hiring), macroeconomic synthesis, and proprietary knowledge base assetization.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real-world Projects & Deal Pipelines -->
+      <div class="card mb-24">
+        <div class="card-title-row">
+          <div>
+            <h3>Selected Project Execution &amp; Global Deal Pipelines (Track Record)</h3>
+            <span class="subtext">Corporate venturing, strategic investments (SI), and collective investment vehicle lifecycle management</span>
+          </div>
+          <span class="badge-status-green">Real-world Track Record</span>
+        </div>
+        <div class="projects-grid">
+          <div class="project-box">
+            <div class="project-tag">Co-GP Blind Fund</div>
+            <h4>Co-GP &amp; Strategic Investor (SI) Blind Fund Formation</h4>
+            <p>Drafted comprehensive fund formation proposals and deal sourcing pipelines targeting cross-border institutional and corporate partners.</p>
+          </div>
+          <div class="project-box">
+            <div class="project-tag">SDV AI Automation</div>
+            <h4>Korea-Taiwan (SK Group - Foxconn) SDV Manufacturing Deal</h4>
+            <p>Sourced and proposed SDV AI software manufacturing line automation startups, establishing strategic cross-border partnership alignments.</p>
+          </div>
+          <div class="project-box">
+            <div class="project-tag">Semiconductor / HBM</div>
+            <h4>Korea-Japan (Softbank) AI Semiconductor &amp; ESS Alliance</h4>
+            <p>Structured strategic cross-border investment proposals linking next-gen High Bandwidth Memory (HBM), Energy Storage Systems (ESS), and IoT supply chains.</p>
+          </div>
+          <div class="project-box">
+            <div class="project-tag">DeepTech SI Sourcing</div>
+            <h4>Global Strategic Deal Discovery (SandboxAQ &amp; Quantum Tech)</h4>
+            <p>Led executive meetings and deep technical feasibility reviews for pioneering global quantum computing and AI ventures.</p>
+          </div>
+          <div class="project-box">
+            <div class="project-tag">High-Level Interpretation</div>
+            <h4>2024 Korea-Israel Innovation Day Official Interpretation</h4>
+            <p>Provided high-level technical interpretation and negotiations across Fabless semiconductors, ADAS automotive software, and advanced materials.</p>
+          </div>
+          <div class="project-box">
+            <div class="project-tag">Fund Liquidation</div>
+            <h4>Collective Investment Vehicles (Blind &amp; Project) Dissolution</h4>
+            <p>Executed full dissolution and liquidation workflows, tax and legal counsel coordination, and secondary asset liquidation across Y23-24 funds.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corporate Information & Naming Philosophy -->
+      <div class="card corp-info-card">
+        <div class="card-title-row">
+          <div>
+            <h3>Corporate Entity &amp; Naming Philosophy (About FluxifyJME)</h3>
+            <span class="subtext">Official corporate entity registration &amp; financial engineering heritage</span>
+          </div>
+          <span class="badge-pill-cyan">Business Reg: 637-09-03030</span>
+        </div>
+
+        <div class="corp-grid">
+          <div class="corp-details-col">
+            <table class="corp-info-table">
+              <tr>
+                <th>Corporate Name</th>
+                <td>FluxifyJME Inc.</td>
+              </tr>
+              <tr>
+                <th>Business Registration</th>
+                <td>637-09-03030</td>
+              </tr>
+              <tr>
+                <th>Business Category</th>
+                <td>Information &amp; Communications Technology</td>
+              </tr>
+              <tr>
+                <th>Industry Classification</th>
+                <td>Code 642004 (Financial &amp; Digital Information Intermediation Services)</td>
+              </tr>
+              <tr>
+                <th>Chief Executive</th>
+                <td>Jamie (JaeMin) Song</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="corp-etymology-col">
+            <h4>The Philosophy of 'FluxifyJME'</h4>
+            <p>
+              <strong>Flux</strong> (continuous rate of change, liquidity, calculus) is fused with <strong>Finance (Fi)</strong> and transformed into an active verb via <strong>‘-ify’</strong>.
+              Combined with the founder's identity <strong>‘Jme’</strong> (Jamie), it signifies <em>“Creating Your Own Financial Flow.”</em>
+            </p>
+            <p class="etymology-sub">
+              The brand name also reflects <strong>Flex</strong> (dynamic asset empowerment and active capital engagement), representing a relentless drive to unlock secondary market liquidity for alternative investments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER: APPENDIX C REGULATORY & COMPLIANCE DISCLOSURES
+       ========================================================================== -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-disclosure-block">
+        <h4>Appendix C: KYC/AML Standards | Accredited Investor Criteria | Legal &amp; Risk Disclosures</h4>
+        
+        <div class="disclosure-columns">
+          <div class="disc-col">
+            <strong>C.1 KYC / AML Compliance Standards</strong>
+            <p>
+              Strict adherence to Customer Identification Programs (CIP), biometric/ID verification, and Ultimate Beneficial Owner (UBO) filings. Comprehensive screening against FATF, US OFAC sanctions lists, and on-chain transaction monitoring.
+            </p>
+          </div>
+
+          <div class="disc-col">
+            <strong>C.2 Accredited Investor Verification</strong>
+            <p>
+              Compliance with US Regulation D Rule 506(c) and international securities regulations: Requires annual income exceeding US$ 200,000 (US$ 300,000 joint) for consecutive years or net worth exceeding US$ 1,000,000 (excluding primary residence).
+            </p>
+          </div>
+
+          <div class="disc-col">
+            <strong>C.3 Risk of Capital Loss &amp; Illiquidity</strong>
+            <p>
+              Private alternative assets and digital securities involve significant speculative risks, including the potential for total capital loss. Investments are subject to contractual lock-up periods. Past simulated results do not guarantee future performance.
+            </p>
+          </div>
+
+          <div class="disc-col">
+            <strong>C.4 Confidentiality &amp; Non-Circumvention (NDA)</strong>
+            <p>
+              All diligence dossiers and deal pipelines are proprietary and strictly confidential. Bypassing the platform to directly approach or solicit portfolio companies is prohibited and subject to immediate disqualification and legal liability.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-copyright-row">
+          <span>&copy; 2026 FluxifyJME Inc. Business Registration: 637-09-03030. All rights reserved.</span>
+          <span>Powered by Google gemini-3.5-flash-lite (v1beta) Native Engine</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL 1: GOOGLE GEMINI API KEY SETTINGS
+       ========================================================================== -->
+  <div class="modal-backdrop" id="apiModal" style="display:none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-row">
+          <span class="icon">⚙️</span>
+          <h3>Google Gemini API Key Configuration</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeApiModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">
+          This application connects directly from your browser to Google Generative Language API (<code>v1beta</code>) invoking the <code>gemini-3.5-flash-lite</code> model with zero middle servers.
+        </p>
+        
+        <div class="form-group mb-16">
+          <label for="inputApiKey">Gemini API Key:</label>
+          <div class="input-password-wrapper">
+            <input type="password" id="inputApiKey" placeholder="AIzaSy..." class="form-input">
+            <button type="button" class="btn-eye" onclick="toggleApiKeyVisibility()" id="btnEye">👁️</button>
+          </div>
+          <small class="helper-text">Your API key is stored strictly within browser <code>localStorage</code> and is never transmitted to external servers.</small>
+        </div>
+
+        <div class="model-spec-info">
+          <div class="spec-row">
+            <span class="spec-label">Assigned Model:</span>
+            <span class="spec-value highlight">gemini-3.5-flash-lite</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">API Version:</span>
+            <span class="spec-value">v1beta</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Connection Mode:</span>
+            <span class="spec-value">Direct Browser CORS (No Proxy)</span>
+          </div>
+        </div>
+
+        <div id="apiTestFeedback" class="test-feedback" style="display:none;"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost text-rose" onclick="clearApiKey()">Reset Key</button>
+        <button class="btn btn-outline-cyan" onclick="testApiKey()" id="btnTestApi">
+          <span>Test Connection</span>
+        </button>
+        <button class="btn btn-primary-toss" onclick="saveApiKey()">
+          <span>Save &amp; Apply</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: KYC & INVESTOR VERIFICATION MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop" id="kycModal" style="display:none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-row">
+          <span class="icon">🛡️</span>
+          <div>
+            <span class="super-sub">WELCOME TO FLUXIFY</span>
+            <h3>Preparing Secure Investment Onboarding</h3>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeKycModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">
+          Institutional partner preview. Do not enter actual government IDs or financial credentials into this simulation screen.
+        </p>
+
+        <div class="kyc-steps-list">
+          <div class="kyc-step-card ready">
+            <div class="step-num-circle">1</div>
+            <div class="step-details">
+              <strong>Email Verification</strong>
+              <p>Account identity and contact authentication.</p>
+            </div>
+            <span class="kyc-step-tag green">Ready</span>
+          </div>
+
+          <div class="kyc-step-card pending">
+            <div class="step-num-circle">2</div>
+            <div class="step-details">
+              <strong>Identity Verification (KYC / CIP)</strong>
+              <p>Pending institutional identity provider linkage.</p>
+            </div>
+            <span class="kyc-step-tag">Pending Integration</span>
+          </div>
+
+          <div class="kyc-step-card pending">
+            <div class="step-num-circle">3</div>
+            <div class="step-details">
+              <strong>Accredited Investor Attestation</strong>
+              <p>Reg D Rule 506(c) income and net worth criteria verification.</p>
+            </div>
+            <span class="kyc-step-tag">Pending Integration</span>
+          </div>
+        </div>
+
+        <div class="kyc-footer-note">
+          <span>Demonstration workflow preview.</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-dark" onclick="closeKycModal()">Close</button>
+        <button class="btn btn-primary-toss" onclick="closeKycModal()">Preview Demo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 3: QUANT STRATEGIES & PURE ALPHA FORMULA MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop" id="quantDetailModal" style="display:none;">
+    <div class="modal-dialog modal-large">
+      <div class="modal-header">
+        <div class="modal-title-row">
+          <span class="icon">📐</span>
+          <h3>Quantitative Financial Engineering &amp; Pure Alpha Architecture</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeQuantDetailModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="quant-modal-content">
+          <div class="formula-intro-banner mb-20">
+            <strong>Signal vs. White Noise (&epsilon;) Isolation Process</strong>
+            <p>
+              Traditional Model: <code>R_walmart = &beta;&middot;(R_market) + &epsilon;_baseline</code><br>
+              Quant Alternative Model: <code>R_walmart = &beta;&middot;(R_market) + &gamma;&middot;(Satellite Parking Traffic) + &epsilon;_residual</code><br>
+              By incorporating proprietary alternative datasets (&gamma;), unexplained random error (&epsilon;) is substantially reduced, generating structural <strong>Pure Alpha</strong>.
+            </p>
+          </div>
+
+          <div class="quant-reference-img-container mb-20">
+            <h4>Quantitative Models Taxonomy</h4>
+            <img src="assets/quant_models_ref.png" alt="Quant Financial Engineering Models" class="quant-ref-img">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-dark" onclick="closeQuantDetailModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL / DRAWER: AI 1:1 ADVISORY DESK
+       ========================================================================== -->
+  <div class="modal-backdrop" id="aiDrawerModal" style="display:none;">
+    <div class="modal-dialog modal-ai-drawer">
+      <div class="modal-header">
+        <div class="modal-title-row">
+          <span class="icon">🤖</span>
+          <div>
+            <h3>AI Alternative Investment Advisory Desk</h3>
+            <span class="subtext-muted">Chief Portfolio Manager Jamie Song Persona · gemini-3.5-flash-lite (v1beta)</span>
+          </div>
+        </div>
+        <div class="ai-header-actions">
+          <button class="btn btn-outline-dark btn-sm" onclick="clearDrawerChat()">
+            <span>Clear History</span>
+          </button>
+          <button class="btn btn-outline-dark btn-sm" onclick="exportConsultingReport()">
+            <span>Print Report</span>
+          </button>
+          <button class="modal-close-btn" onclick="closeAiChatModal()">&times;</button>
+        </div>
+      </div>
+
+      <div class="modal-body ai-drawer-body">
+        <!-- Quick Preset Prompts Bar -->
+        <div class="drawer-prompts-bar">
+          <button class="prompt-chip" onclick="sendDrawerPreset(1)">🏢 LP Fund IPS &amp; Liquidity Governance</button>
+          <button class="prompt-chip" onclick="sendDrawerPreset(2)">🛡️ GP Sub-Line Return Distortion Defense</button>
+          <button class="prompt-chip" onclick="sendDrawerPreset(3)">📱 Institutional App-in-Toss M&amp;A Strategy</button>
+          <button class="prompt-chip" onclick="sendDrawerPreset(4)">🌐 FX Hedging &amp; Cross-Border Mechanics</button>
+          <button class="prompt-chip" onclick="sendDrawerPreset(5)">🔬 KMV Merton Distance-to-Default &amp; EDF</button>
+          <button class="prompt-chip" onclick="sendDrawerPreset(6)">💼 ZK-ML &amp; Dynamic LTV Risk Controls</button>
+        </div>
+
+        <!-- Chat Messages Container -->
+        <div class="drawer-chat-messages" id="drawerChatMessages">
+          <div class="chat-msg msg-ai">
+            <div class="msg-avatar">JS</div>
+            <div class="msg-body">
+              <div class="msg-sender">
+                <strong>FluxifyJME AI Advisory</strong>
+                <span class="sender-title">Cross-border PE/VC · CRA · CIM · Strategic FP&amp;A · FluxifyJME</span>
+              </div>
+              <div class="msg-text">
+                <p>Welcome. <strong>FluxifyJME</strong> bridges Traditional Finance (TradFi) quantitative valuation models with Web3 smart contracts to solve secondary liquidity constraints in private alternative investments.</p>
+                <p>
+                  <strong>Cross-border PE/VC | Global Macro &amp; Event-Driven Hedge Fund Manager | Chief Portfolio Manager</strong><br>
+                  Alternative Investment | PE/HF | Digital Asset | RWA ⊃ STO
+                </p>
+                <p>Your Google <code>gemini-3.5-flash-lite (v1beta)</code> API key is active. Inquire freely regarding DCF / Reverse DCF models, private equity cash flow waterfall distribution, KMV structural credit metrics, or our App-in-Toss strategic roadmap.</p>
+                <p><em>Please refrain from inputting confidential corporate identifiers or proprietary transaction data.</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Form -->
+        <form class="drawer-input-form" id="drawerChatInputForm" onsubmit="handleDrawerChatSubmit(event)">
+          <div class="drawer-input-row">
+            <textarea id="drawerChatInput" placeholder="Ask Jamie Song regarding PE/VC valuation, waterfall structures, KMV credit risk, or App-in-Toss M&amp;A strategy..." rows="2" onkeydown="handleDrawerKeydown(event)"></textarea>
+            <button type="submit" class="btn btn-primary-toss drawer-send-btn" id="drawerSendBtn">
+              <span>Send</span>
+              <span class="send-arrow">➤</span>
+            </button>
+          </div>
+          <div class="drawer-input-footer">
+            <span>Powered by <strong>gemini-3.5-flash-lite</strong> (v1beta) · Inquiries are routed directly to Google API. Output does not constitute legal, tax, or investment advisory.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
